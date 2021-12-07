@@ -93,13 +93,23 @@
                     companion.Featuring a durable rubber outer sole, they’ll
                     withstand everything the weather can offer.
                 </p>
-                <div class="actual-price">$125.00</div>
-                <span>50%</span>
-                <div class="original-price">$250.00</div>
+                <div class="actual-price">${{actualPrice}}</div>
+                <span>%{{descount}}</span>
+                <div class="original-price">${{originalPrice}}</div>
                 <div class="clickable">
-                    <input name="val" type="button" value="+" />
-                    <label for="val">0</label>
-                    <input name="val" type="button" value="-" />
+                    <input
+                        name="val"
+                        type="button"
+                        v-on:click="cuantity+= 1"
+                        value="+"
+                    />
+                    <label for="val">{{cuantity}}</label>
+                    <input
+                        name="val"
+                        type="button"
+                        v-on:click="cuantity-= 1"
+                        value="-"
+                    />
                 </div>
                 <button>
                     <img src="../images/icon-cart.svg" alt="cart" />
@@ -116,5 +126,6 @@
                 >Frontend Mentor</a
             >. Coded by <a href="#">Mariano Torres Leyva</a>.
         </div>
+        <script src="./main.js"></script>
     </body>
 </html>
