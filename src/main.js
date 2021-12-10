@@ -1,9 +1,14 @@
+import Vue from "https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.esm.browser.js";
+
+import bttn from "./components/headerMenu.js";
+
+Vue.component("buttonComponent", bttn);
 let app = new Vue({
     el: ".container",
     data: {
-        actualPrice: 125.0,
+        // actualPrice: 0,
         originalPrice: 250.0,
-        descount: 50,
+        descount: 25,
         cuantity: 0,
         productLimited: 5,
     },
@@ -32,10 +37,18 @@ let app = new Vue({
             }
         },
     },
-
+    computed: {
+        actualPrice() {
+            let p = (this.originalPrice * this.descount) / 100;
+            return p;
+        },
+    },
     methods: {
         addCartBtn: () => {},
     },
+    // components: {
+    //     bttn,
+    // },
 });
 
 // app.actualPrice += 1;
