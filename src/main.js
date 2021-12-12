@@ -2,15 +2,63 @@ import Vue from "https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.esm.browser.js
 
 import bttn from "./components/headerMenu.js";
 
+const gridValue = {
+    data() {
+        return {
+            // Father
+        };
+    },
+
+    props: ["logo", "shopCart", "userAcount"],
+
+    template: `
+        <header>
+                <div :class="logo.className">
+                    <img :src="logo.source" :alt="logo.refer" />
+                </div>
+                <nav>
+                    <ul>
+                        <li><a :href="collection">Collection</a></li>
+                        <li>Men</li>
+                        <li>Women</li>
+                        <li>About</li>
+                        <li>Contact</li>
+                    </ul>
+                </nav>
+                <div :class="shopCart.className">
+                    <img :src="shopCart.source" :alt="shopCart.refer" />
+                </div>
+                <div :class="userAcount.className">
+                    <img :src="userAcount.source" :alt="userAcount.refer" />
+                </div>
+            </header>
+    `,
+};
 Vue.component("buttonComponent", bttn);
 let app = new Vue({
-    el: ".container",
+    el: ".root",
     data: {
         // actualPrice: 0,
         originalPrice: 250.0,
         descount: 25,
         cuantity: 0,
         productLimited: 5,
+        collection: "./pages/collection.html",
+        logo: {
+            refer: "Logo",
+            source: "../images/logo.svg",
+            className: "logo-container",
+        },
+        shopCart: {
+            refer: "shop cart",
+            source: "../images/icon-cart.svg",
+            className: "shopping-cart",
+        },
+        userAcount: {
+            refer: "user acount",
+            source: "../images/image-avatar.png",
+            className: "user-acount",
+        },
     },
     watch: {
         cuantity: (newValue, oldValue) => {
@@ -46,9 +94,9 @@ let app = new Vue({
     methods: {
         addCartBtn: () => {},
     },
-    // components: {
-    //     bttn,
-    // },
+    components: {
+        "header-custom": gridValue,
+    },
 });
 
 // app.actualPrice += 1;

@@ -11,3 +11,17 @@ export default Vue.component("buttonComponent", {
 // modules = {
 //     bttn,
 // };
+
+/* TRASH */
+/**
+ *export default hM = new Vue({
+    el: "header",
+    data() {
+        return {
+            collection: "./pages/collection.html",
+        };
+    },
+});
+
+ 
+ *  */

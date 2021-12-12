@@ -14,7 +14,7 @@
 
         <title>Frontend Mentor | E-commerce product page</title>
         <!-- CSS -->
-        <link rel="stylesheet" href="./style.css" />
+        <link rel="stylesheet" href="./styles-sheets/style.css" />
 
         <!-- CDN -->
         <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script> -->
@@ -31,102 +31,112 @@
         </style>
     </head>
     <body>
-        <header>
-            <div class="logo-container">
-                <img src="../images/logo.svg" alt="Logo" />
-            </div>
-            <!-- <h1>Sneakers</h1> -->
-            <nav>
-                <ul>
-                    <li>Collections</li>
-                    <li>Men</li>
-                    <li>Women</li>
-                    <li>About</li>
-                    <li>Contact</li>
-                </ul>
-            </nav>
-            <div class="shopping-cart">
-                <img src="../images/icon-cart.svg" alt="shopping-cart" />
-            </div>
-            <div class="user-acount">
-                <img src="../images/image-avatar.png" alt="user-avatar" />
-            </div>
-        </header>
+        <div class="root">
+            <header>
+                <div class="logo-container">
+                    <img src="../images/logo.svg" alt="Logo" />
+                </div>
+                <!-- <h1>Sneakers</h1> -->
+                <nav>
+                    <ul>
+                        <li><a :href="collection">Collection</a></li>
+                        <li>Men</li>
+                        <li>Women</li>
+                        <li>About</li>
+                        <li>Contact</li>
+                    </ul>
+                </nav>
+                <div class="shopping-cart">
+                    <img src="../images/icon-cart.svg" alt="shopping-cart" />
+                </div>
+                <div class="user-acount">
+                    <img src="../images/image-avatar.png" alt="user-avatar" />
+                </div>
+            </header>
 
-        <div class="container">
-            <div class="carousel">
-                <div class="main-product-image">
-                    <img src="../images/image-product-1.jpg" alt="" />
+            <div class="container">
+                <div class="carousel">
+                    <div class="main-product-image">
+                        <img src="../images/image-product-1.jpg" alt="" />
+                    </div>
+                    <div class="grid-product-images">
+                        <div class="item-container-image">
+                            <img
+                                src="../images/image-product-2.jpg"
+                                alt="Carousel-images"
+                            />
+                        </div>
+                        <div class="item-container-image">
+                            <img
+                                src="../images/image-product-3.jpg"
+                                alt="Carousel-images"
+                            />
+                        </div>
+                        <div class="item-container-image">
+                            <img
+                                src="../images/image-product-4.jpg"
+                                alt="Carousel-images"
+                            />
+                        </div>
+                        <div class="item-container-image">
+                            <img
+                                src="../images/image-product-1.jpg"
+                                alt="Carousel-images"
+                            />
+                        </div>
+                    </div>
                 </div>
-                <div class="grid-product-images">
-                    <div class="item-container-image">
-                        <img
-                            src="../images/image-product-2.jpg"
-                            alt="Carousel-images"
+                <div class="description">
+                    <h3>sneaker company</h3>
+                    <h2>Fall Limited Edition Sneakers</h2>
+                    <p>
+                        These low-profile sneakers are your perfect casual wear
+                        companion.Featuring a durable rubber outer sole, they’ll
+                        withstand everything the weather can offer.
+                    </p>
+                    <div class="actual-price">${{actualPrice}}</div>
+                    <span>%{{descount}}</span>
+                    <div class="original-price">${{originalPrice}}</div>
+                    <div class="clickable">
+                        <input
+                            name="val"
+                            type="button"
+                            v-on:click="cuantity+= 1"
+                            value="+"
+                        />
+                        <label for="val">{{cuantity}}</label>
+                        <input
+                            name="val"
+                            type="button"
+                            v-on:click="cuantity-= 1"
+                            value="-"
                         />
                     </div>
-                    <div class="item-container-image">
-                        <img
-                            src="../images/image-product-3.jpg"
-                            alt="Carousel-images"
-                        />
-                    </div>
-                    <div class="item-container-image">
-                        <img
-                            src="../images/image-product-4.jpg"
-                            alt="Carousel-images"
-                        />
-                    </div>
-                    <div class="item-container-image">
-                        <img
-                            src="../images/image-product-1.jpg"
-                            alt="Carousel-images"
-                        />
-                    </div>
+                    <button>
+                        <img src="../images/icon-cart.svg" alt="cart" />
+                        <span>Add to Cart</span>
+                    </button>
+                    <button-component></button-component>
+                </div>
+                <div class="extra-components">
+                    <header-custom
+                        v-bind="logo"
+                        v-bind="shopCart"
+                        v-bind="userAcount"
+                    ></header-custom>
                 </div>
             </div>
-            <div class="description">
-                <h3>sneaker company</h3>
-                <h2>Fall Limited Edition Sneakers</h2>
-                <p>
-                    These low-profile sneakers are your perfect casual wear
-                    companion.Featuring a durable rubber outer sole, they’ll
-                    withstand everything the weather can offer.
-                </p>
-                <div class="actual-price">${{actualPrice}}</div>
-                <span>%{{descount}}</span>
-                <div class="original-price">${{originalPrice}}</div>
-                <div class="clickable">
-                    <input
-                        name="val"
-                        type="button"
-                        v-on:click="cuantity+= 1"
-                        value="+"
-                    />
-                    <label for="val">{{cuantity}}</label>
-                    <input
-                        name="val"
-                        type="button"
-                        v-on:click="cuantity-= 1"
-                        value="-"
-                    />
-                </div>
-                <button>
-                    <img src="../images/icon-cart.svg" alt="cart" />
-                    <span>Add to Cart</span>
-                </button>
-                <button-component></button-component>
-            </div>
-        </div>
 
-        <div class="attribution">
+            <!-- <div class="attribution">
             Challenge by
             <a
                 href="https://www.frontendmentor.io?ref=challenge"
                 target="_blank"
                 >Frontend Mentor</a
             >. Coded by <a href="#">Mariano Torres Leyva</a>.
+        </div> -->
+            <!-- <script type="module" src="./components/headerMenu.js"></script> -->
+            <script type="module" src="./main.js"></script>
         </div>
-        <script type="module" src="./main.js"></script>
     </body>
 </html>
