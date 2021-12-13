@@ -9,7 +9,7 @@ const gridValue = {
         };
     },
 
-    props: ["logo", "shopCart", "userAcount"],
+    props: ["logo", "shop-cart", "user-acount", "collection"],
 
     template: `
         <header>
