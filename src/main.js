@@ -1,6 +1,7 @@
 import Vue from "https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.esm.browser.js";
 
 import bttn from "./components/headerMenu.js";
+import modal from "./components/canvas.js";
 
 const gridValue = {
     data() {
@@ -59,6 +60,12 @@ let app = new Vue({
             source: "../images/image-avatar.png",
             className: "user-acount",
         },
+        modal: {
+            refer: "modal",
+            source: "../images/logo.svg",
+            className: "modal",
+            containerImage: "modal-image",
+        },
     },
     watch: {
         cuantity: (newValue, oldValue) => {
@@ -96,6 +103,7 @@ let app = new Vue({
     },
     components: {
         "header-custom": gridValue,
+        "modal-offer": modal,
     },
 });
 
