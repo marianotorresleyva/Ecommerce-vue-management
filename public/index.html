@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <meta name="author" content="Mariano Torres" />
+  <meta name="description" content="An e-commerce on one page" />
+  <script src="main.js" defer></script>
+  <title>Sneakers Product Page</title>
+</head>
+
+<body>
+  <header>
+    <div class="menu hide"><img src="../src/assets/icon-menu.svg" alt="menu"></div>
+    <div class="logo"><img src="../src/assets/logo.svg" alt="logo"></div>
+    <nav class="navbar">
+      <p>Collections</p>
+      <p>Men</p>
+      <p>Women</p>
+      <p>About</p>
+      <p>Contact</p>
+    </nav>
+
+    <div class="cart-and-profile-container">
+      <div class="cart-container">
+        <img src="../src/assets/icon-cart.svg" alt="cart">
+        <div class="cart-units empty"></div>
+      </div>
+      <div class="profile-img"><img src="../src/assets/image-avatar.png" alt="profile-img"></div>
+    </div>
+
+    <nav class="smallscreen-navbar hide">
+      <p>Collections</p>
+      <p>Men</p>
+      <p>Women</p>
+      <p>About</p>
+      <p>Contact</p>
+    </nav>
+
+    <div class="cart hide">
+      <div class="cart-header">Cart</div>
+      <div class="cart-body empty">
+        Your cart is empty
+      </div>
+    </div>
+
+  </header>
+
+  <main class="product-body">
+    <div class="product-images">
+      <div class="current-image" id="lightbox" style="background-image: url('../src/assets/image-product-1.jpg')"></div>
+
+      <div class="images">
+        <div class="image 1 active" style="background-image: url('../src/assets/image-product-1-thumbnail.jpg')">
+          <div class="overlay"></div>
+        </div>
+        <div class="image 2" style="background-image: url('../src/assets/image-product-2-thumbnail.jpg')"></div>
+        <div class="image 3" style="background-image: url('../src/assets/image-product-3-thumbnail.jpg')"></div>
+        <div class="image 4" style="background-image: url('../src/assets/image-product-4-thumbnail.jpg')"></div>
+      </div>
+    </div>
+
+    <div class="product-info">
+
+      <h1>Sneaker Company</h1>
+      <h2 id="name-of-product">Fall Limited Edition Sneakers</h2>
+      <p>These low-profile sneakers are your perfect casual wear companion. Featuring a
+        durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
+
+      <div class="price">
+        <h3 id="price-of-product">$125.00</h3>
+        <button class="discount">50%</button>
+      </div>
+      <h4>$250.00</h4>
+
+      <div class="buttons">
+        <div class="units">
+          <div class="minus"><img src="../src/assets/icon-minus.svg" alt="minus"></div> <span class="units-value"> 0
+          </span>
+          <div class="plus"><img src="../src/assets/icon-plus.svg" alt="plus"></div>
+        </div>
+        <button class="add-to-cart"> <img src="../src/assets/icon-cart.svg" alt="cart"> Add to cart</button>
+      </div>
+
+    </div>
+
+  </main>
+
+</body>
+
+</html>
