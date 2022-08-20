@@ -1,6 +1,6 @@
-# E-commerce Product on 1Page [![Button.png](https://i.postimg.cc/zvTsvrq1/Button.png)](https://marianotorresleyva.github.io/Ecommerce1Page/)
+# E-commerce Product on 1Page [![Button.png](https://i.postimg.cc/zvTsvrq1/Button.png)](https://marianotorresleyva.github.io/Ecommerce1Page/public/)
 
-![Desktop Preview](https://i.postimg.cc/WbGDLqL5/image1.png)
+[![Desktop Preview](https://i.postimg.cc/WbGDLqL5/image1.png)](https://marianotorresleyva.github.io/Ecommerce1Page/public/)
 
 ## SKILLS
 
